@@ -1,0 +1,6 @@
+@Laboratory_Umbrella.Service.WebApi_HostAddress = http://localhost:5235
+
+GET {{Laboratory_Umbrella.Service.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
