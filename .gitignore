@@ -1,0 +1,8 @@
+# Visual Studio cache
+.vs/
+*.db
+*.suo
+
+# Compilación .NET
+bin/
+obj/
