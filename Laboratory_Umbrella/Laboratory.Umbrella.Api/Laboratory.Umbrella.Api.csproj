@@ -6,4 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Laboratory.Umbrella.Data\Laboratory.Umbrella.Data.csproj" />
+    <ProjectReference Include="..\Laboratory.Umbrella.Dominio\Laboratory.Umbrella.Dominio.csproj" />
+    <ProjectReference Include="..\Laboratory.Umbrella.Servicios\Laboratory.Umbrella.Services.csproj" />
+  </ItemGroup>
+
 </Project>

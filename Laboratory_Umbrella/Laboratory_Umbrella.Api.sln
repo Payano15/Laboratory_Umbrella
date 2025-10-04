@@ -9,9 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.Umbrella.Dominio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.Umbrella.Data", "Laboratory.Umbrella.Data\Laboratory.Umbrella.Data.csproj", "{BEA437D6-2450-4712-B211-0398C8F26655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.Umbrella.Servicios", "Laboratory.Umbrella.Servicios\Laboratory.Umbrella.Servicios.csproj", "{2CB0C154-D09D-49D3-835E-549F6D5F57D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.Umbrella.Services", "Laboratory.Umbrella.Servicios\Laboratory.Umbrella.Services.csproj", "{2CB0C154-D09D-49D3-835E-549F6D5F57D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.Umbrella.Api", "Laboratory.Umbrella.Api\Laboratory.Umbrella.Api.csproj", "{75E6DDFA-57D9-32F7-6977-2632C5C88E90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{0A128466-B079-46E1-8331-8EFE73FA53CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{D0381762-DB2F-4879-8B19-125C55A0DDD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplication", "Aplication", "{476C275B-E521-478F-814F-A329B7DAF8B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F7A5FA8B-6B6E-4D69-8EF4-2A534DB5BB81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +46,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB7D61DE-8A15-4415-AE72-F5396131AB2F} = {D0381762-DB2F-4879-8B19-125C55A0DDD0}
+		{BEA437D6-2450-4712-B211-0398C8F26655} = {F7A5FA8B-6B6E-4D69-8EF4-2A534DB5BB81}
+		{2CB0C154-D09D-49D3-835E-549F6D5F57D3} = {476C275B-E521-478F-814F-A329B7DAF8B2}
+		{75E6DDFA-57D9-32F7-6977-2632C5C88E90} = {0A128466-B079-46E1-8331-8EFE73FA53CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6C0B009-DF98-4400-9CD1-BDAD1A5E4E8F}
