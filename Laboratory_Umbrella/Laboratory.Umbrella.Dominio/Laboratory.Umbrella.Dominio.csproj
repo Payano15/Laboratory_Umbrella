@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Exception\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Response\" />
-    <Folder Include="Request\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Swagger-Net" Version="8.5.28.1" />
   </ItemGroup>

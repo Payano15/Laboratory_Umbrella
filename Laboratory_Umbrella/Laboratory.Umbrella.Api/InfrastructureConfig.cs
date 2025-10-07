@@ -1,5 +1,5 @@
 ﻿using Laboratory.Umbrella.Data;
-using Laboratory.Umbrella.Dominio.Comman;
+using Laboratory.Umbrella.Dominio.Common;
 
 namespace Laboratory.Umbrella.Api;
 

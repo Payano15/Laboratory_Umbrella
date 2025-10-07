@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Laboratory.Umbrella.Dominio\Laboratory.Umbrella.Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

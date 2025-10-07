@@ -1,6 +1,6 @@
 using Laboratory.Umbrella.Api;
 using Laboratory.Umbrella.Api.Middlewares;
-using Laboratory.Umbrella.Dominio.Comman;
+using Laboratory.Umbrella.Dominio.Common;
 using Laboratory.Umbrella.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Laboratory.Umbrella.Services.Interfaces;
+using Laboratory.Umbrella.Services.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +13,9 @@ public static class ApplicationDependencyContainer
 {
     public static IServiceCollection AddApplicationDependencies(this IServiceCollection services)
     {
-        // Aquí puedes registrar los servicios de la capa de aplicación
-        // Por ejemplo:
-        // services.AddTransient<IMiServicio, MiServicio>();
+        services.AddScoped<IClienteService, ClienteService>();
+        services.AddScoped<ISecurityService, SecurityService>();
+
         return services;
     }
 }

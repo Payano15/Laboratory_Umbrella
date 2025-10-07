@@ -1,5 +1,5 @@
 ﻿using Laboratory.Umbrella.Api.Attributes;
-using Laboratory.Umbrella.Dominio.Comman;
+using Laboratory.Umbrella.Dominio.Common;
 using System.Net;
 
 namespace Laboratory.Umbrella.Api.Middlewares;

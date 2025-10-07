@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Laboratory.Umbrella.Dominio.Comman;
+namespace Laboratory.Umbrella.Dominio.Common;
 
 public class Response<T>
 {

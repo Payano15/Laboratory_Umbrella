@@ -22,6 +22,8 @@ public class MongoMappingConfig
         BsonSerializer.RegisterSerializer(typeof(Dictionary<int, decimal>), new DictionaryInterfaceImplementerSerializer<Dictionary<int, decimal>>(DictionaryRepresentation.ArrayOfDocuments));
         BsonSerializer.RegisterSerializer(typeof(Dictionary<string, decimal>), new DictionaryInterfaceImplementerSerializer<Dictionary<string, decimal>>(DictionaryRepresentation.ArrayOfDocuments));
 
+        Register<Cliente>();
+
     }
 
     private static void Register<T>() where T : IEntity
