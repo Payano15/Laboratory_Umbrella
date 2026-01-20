@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\Laboratory.Umbrella.Api.csproj": {}
+    "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\Laboratory.Umbrella.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\Laboratory.Umbrella.Api.csproj": {
+    "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\Laboratory.Umbrella.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\Laboratory.Umbrella.Api.csproj",
+        "projectUniqueName": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\Laboratory.Umbrella.Api.csproj",
         "projectName": "Laboratory.Umbrella.Api",
-        "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\Laboratory.Umbrella.Api.csproj",
-        "packagesPath": "C:\\Users\\PAYANO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\obj\\",
+        "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\Laboratory.Umbrella.Api.csproj",
+        "packagesPath": "C:\\Users\\manue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PAYANO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\manue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,21 +25,20 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj": {
-                "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj"
+              "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj": {
+                "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj"
               },
-              "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj": {
-                "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj"
+              "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj": {
+                "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj"
               },
-              "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj": {
-                "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj"
+              "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj": {
+                "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj"
               }
             }
           }
@@ -54,7 +53,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -70,7 +69,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -92,24 +91,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj": {
+    "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj",
+        "projectUniqueName": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj",
         "projectName": "Laboratory.Umbrella.Data",
-        "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj",
-        "packagesPath": "C:\\Users\\PAYANO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\obj\\",
+        "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\Laboratory.Umbrella.Data.csproj",
+        "packagesPath": "C:\\Users\\manue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PAYANO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\manue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -117,18 +116,17 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj": {
-                "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj"
+              "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj": {
+                "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj"
               },
-              "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj": {
-                "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj"
+              "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj": {
+                "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj"
               }
             }
           }
@@ -143,7 +141,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -190,24 +188,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj": {
+    "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj",
         "projectName": "Laboratory.Umbrella.Dominio",
-        "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj",
-        "packagesPath": "C:\\Users\\PAYANO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj",
+        "packagesPath": "C:\\Users\\manue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PAYANO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\manue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -215,7 +213,6 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -234,7 +231,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -265,24 +262,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj": {
+    "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj",
+        "projectUniqueName": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj",
         "projectName": "Laboratory.Umbrella.Services",
-        "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj",
-        "packagesPath": "C:\\Users\\PAYANO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\obj\\",
+        "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\Laboratory.Umbrella.Services.csproj",
+        "packagesPath": "C:\\Users\\manue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Servicios\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PAYANO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\manue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -290,15 +287,14 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj": {
-                "projectPath": "C:\\Users\\PAYANO\\Desktop\\dechill\\Laboratory_Umbrella.api\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj"
+              "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj": {
+                "projectPath": "C:\\Users\\manue\\source\\repos\\Laboratory_Umbrella\\Laboratory_Umbrella\\Laboratory.Umbrella.Dominio\\Laboratory.Umbrella.Dominio.csproj"
               }
             }
           }
@@ -313,7 +309,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -352,7 +348,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
