@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\manue\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSwagger-Net Condition=" '$(PkgSwagger-Net)' == '' ">C:\Users\manue\.nuget\packages\swagger-net\8.5.28.1</PkgSwagger-Net>
+  </PropertyGroup>
 </Project>
