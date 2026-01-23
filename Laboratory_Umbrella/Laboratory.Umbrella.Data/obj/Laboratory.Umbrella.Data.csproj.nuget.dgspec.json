@@ -56,6 +56,20 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.23, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[9.0.9, )"
@@ -63,14 +77,6 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[9.0.9, )"
-            },
-            "MongoDB.Bson": {
-              "target": "Package",
-              "version": "[3.5.0, )"
-            },
-            "MongoDB.Driver": {
-              "target": "Package",
-              "version": "[3.5.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -227,10 +233,6 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[9.0.9, )"
-            },
-            "MongoDB.Driver": {
-              "target": "Package",
-              "version": "[3.5.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

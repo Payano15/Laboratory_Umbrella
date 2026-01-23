@@ -2,12 +2,15 @@
 
 public static class GeneralStatus
 {
-    public struct ClientStatus
+    public static class ClientStatus
     {
         public enum StatusClient
         {
-            ACTIVE =1,
-            INACTIVE =0
+            INACTIVE = 0,
+            ACTIVE = 1,
+            SUSPENDED = 2,
+            DELETED = 3
         }
     }
+
 }

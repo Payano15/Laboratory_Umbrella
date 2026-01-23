@@ -1,4 +1,4 @@
-﻿namespace Laboratory.Umbrella.Dominio.Common;
+namespace Laboratory.Umbrella.Dominio.Common;
 
 public static partial class Types
 {
@@ -12,6 +12,7 @@ public static partial class Types
 
     public enum Database
     {
-        mongo
+        mongo,
+        sqlserver
     }
 }

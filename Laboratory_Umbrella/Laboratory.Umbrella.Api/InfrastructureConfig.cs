@@ -1,4 +1,4 @@
-﻿using Laboratory.Umbrella.Data;
+using Laboratory.Umbrella.Data;
 using Laboratory.Umbrella.Dominio.Common;
 
 namespace Laboratory.Umbrella.Api;
@@ -12,7 +12,7 @@ public static class InfrastructureConfig
 
         return db switch
         {
-            nameof(Types.Database.mongo) => services.AddMongo(config),
+            nameof(Types.Database.sqlserver) => services.AddSqlServer(config),
             _ => throw new ArgumentOutOfRangeException(nameof(db),
                 $"Invalid database: {db}.")
         };

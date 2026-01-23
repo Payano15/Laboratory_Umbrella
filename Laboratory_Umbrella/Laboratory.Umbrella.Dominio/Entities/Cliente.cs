@@ -1,26 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Laboratory.Umbrella.Dominio.Entities;
 
-public class Cliente: IEntity
+public class Cliente : IEntity
 {
-    public string Id { get; set; } = null!;
-    public string fullName { get; set; }= string.Empty;
-    public string Email { get; set; }= string.Empty;
-    public string Phone { get; set; }= string.Empty;
-    public string gender { get; set; }= string.Empty;
-    public string Address { get; set; }= string.Empty;
-    public int Status { get; set; }
-    public DateTime bornDate { get; set; }
-    public string UserCreated { get; set; } = string.Empty;
-    public DateTime CreatedAt { get; set; }
-    public string? UserUpdated { get; set; } = string.Empty;
-    public DateTime? UpdatedAt { get; set; }
-    public string? UserAnulled { get; set; } = string.Empty;
-    public DateTime? AnulledAt { get; set; } 
+    [Key]
+    [MaxLength(36)]
+    public string Id { get; set; } = Guid.NewGuid().ToString();
 
+    [Required]
+    [MaxLength(200)]
+    public string fullName { get; set; } = string.Empty;
+
+    [EmailAddress]
+    [MaxLength(255)]
+    public string? Email { get; set; }
+
+    [MaxLength(20)]
+    public string? Phone { get; set; }
+
+    [MaxLength(10)]
+    public string? gender { get; set; }
+
+    [MaxLength(500)]
+    public string? Address { get; set; }
+
+    // Status como int (enum)
+    public int Status { get; set; }
+
+    public DateTime bornDate { get; set; }
+
+    // Campos de Auditoría
+    [MaxLength(100)]
+    public string? UserCreated { get; set; }
+
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+    [MaxLength(100)]
+    public string? UserUpdated { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+
+    [MaxLength(100)]
+    public string? UserAnulled { get; set; }
+
+    public DateTime? AnulledAt { get; set; }
 }
