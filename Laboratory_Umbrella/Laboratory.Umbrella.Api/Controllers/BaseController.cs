@@ -1,4 +1,4 @@
-﻿using FluentValidation.Results;
+using FluentValidation.Results;
 using Laboratory.Umbrella.Dominio.Common;
 using Laboratory.Umbrella.Dominio.Exception;
 using Laboratory.Umbrella.Dominio.Helpers;
@@ -29,9 +29,6 @@ public class BaseController : ControllerBase
     {
         var token = HttpContext.Request.Headers.Authorization.FirstOrDefault() ?? string.Empty;
         token = token.Replace("Bearer ", "");
-
-        //if (string.IsNullOrEmpty(token) || string.IsNullOrWhiteSpace(token))
-        //    throw new CustomException(Constants.Code.Error.InvalidTokenV2, Constants.Message.Error.InvalidTokenV2);
 
         var providerToken = await _securityService.ValidateToken(token);
 

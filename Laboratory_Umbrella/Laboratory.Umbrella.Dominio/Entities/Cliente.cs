@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Laboratory.Umbrella.Dominio.Entities;
@@ -26,12 +26,10 @@ public class Cliente : IEntity
     [MaxLength(500)]
     public string? Address { get; set; }
 
-    // Status como int (enum)
     public int Status { get; set; }
 
     public DateTime bornDate { get; set; }
 
-    // Campos de Auditoría
     [MaxLength(100)]
     public string? UserCreated { get; set; }
 
