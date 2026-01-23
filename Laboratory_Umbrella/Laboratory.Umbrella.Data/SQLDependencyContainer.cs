@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Laboratory.Umbrella.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +26,8 @@ public static class SQLDependencyContainer
             });
 
             // Solo para desarrollo - muestra queries en consola
-            if (config.GetValue<bool>("DatabaseConfig:EnableSensitiveDataLogging"))
+            var enableSensitiveLoggingRaw = config["DatabaseConfig:EnableSensitiveDataLogging"];
+            if (bool.TryParse(enableSensitiveLoggingRaw, out var enableSensitiveLogging) && enableSensitiveLogging)
             {
                 options.EnableSensitiveDataLogging();
                 options.EnableDetailedErrors();
