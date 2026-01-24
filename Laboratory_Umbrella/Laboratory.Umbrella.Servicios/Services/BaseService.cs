@@ -17,4 +17,10 @@ public class BaseService
     {
         Token = CurrentParametersHelpers.Token;
     }
+    public static string DateToString(DateTime? date) => date is not null ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : string.Empty;
+    public bool HasNextPage(int page, int pageSize, long totalCount)
+    {
+        var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+        return page < totalPages;
+    }
 }

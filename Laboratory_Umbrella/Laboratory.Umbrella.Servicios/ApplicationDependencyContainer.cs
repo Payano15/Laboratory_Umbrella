@@ -1,4 +1,4 @@
-﻿using Laboratory.Umbrella.Services.Interfaces;
+using Laboratory.Umbrella.Services.Interfaces;
 using Laboratory.Umbrella.Services.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -15,6 +15,7 @@ public static class ApplicationDependencyContainer
     {
         services.AddScoped<IClienteService, ClienteService>();
         services.AddScoped<ISecurityService, SecurityService>();
+        services.AddScoped<IUserService, UserService>();
 
         return services;
     }

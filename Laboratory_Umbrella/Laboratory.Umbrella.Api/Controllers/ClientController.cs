@@ -29,7 +29,7 @@ public class ClientController : BaseController
         {
             await Init((BaseService)_clienteService);
             var response = await _clienteService.GetClient(request);
-            return Ok(new Response<MetaDataResponse<List<ClientResponse>, MetaResponse>>(response));
+            return Ok(new Response<MetaDataResponse<List<ClientResponse>>>(response));
         }
         catch (CustomException ex)
         {
@@ -49,7 +49,7 @@ public class ClientController : BaseController
         {
             await Init((BaseService)_clienteService);
             var response = await _clienteService.GetClientById(Id);
-            return Ok(new Response<MetaDataResponse<ClientResponse, MetaResponse>>(response));
+            return Ok(new Response<MetaDataResponse<ClientResponse>>(response));
         }
         catch (CustomException ex)
         {
@@ -68,7 +68,7 @@ public class ClientController : BaseController
         {
             await Init((BaseService)_clienteService);
             var response = await _clienteService.CreateOrUpdateClient(request);
-            return Ok(new Response<MetaDataResponse<bool, MetaResponse>>(response));
+            return Ok(new Response<MetaDataResponse<bool>>(response));
         }
         catch (CustomException ex)
         {

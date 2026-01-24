@@ -26,6 +26,7 @@ public static class Constants
             public static string LotobetLinkFailed = "BRREG0005";
             public static string ActivationNotFound = "BRREG0006";
             public static string ConfigurationFailed = "BRREG0007";
+            public static string UserNoEncontrado = "USRNOT001";
         }
     }
 
@@ -46,6 +47,7 @@ public static class Constants
             public static string LotobetLinkFailed = "Error al vincular con la API de Lotobet";
             public static string ActivationNotFound = "No se encontró una activación pendiente para este board";
             public static string ConfigurationFailed = "Error al configurar el board";
+            public static string UserNoEncontrado = "El usuario no existe";
         }
     }
 

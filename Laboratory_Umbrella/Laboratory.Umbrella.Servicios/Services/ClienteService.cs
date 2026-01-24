@@ -21,7 +21,7 @@ public class ClienteService : BaseService, IClienteService
     #endregion
 
     #region Methods
-    public async Task<MetaDataResponse<List<ClientResponse>, MetaResponse>> GetClient(ClientRequest request)
+    public async Task<MetaDataResponse<List<ClientResponse>>> GetClient(ClientRequest request)
     {
         Expression<Func<Cliente, bool>>? filter = null;
 
@@ -66,18 +66,18 @@ public class ClienteService : BaseService, IClienteService
             TotalPages = (int)Math.Ceiling((double)pagedResult.TotalCount / request.PageSize)
         };
 
-        return new MetaDataResponse<List<ClientResponse>, MetaResponse>(clienteResponse, meta);
+        return new(clienteResponse, meta);
     }
 
-    public async Task<MetaDataResponse<ClientResponse, MetaResponse>> GetClientById(string Id)
+    public async Task<MetaDataResponse<ClientResponse>> GetClientById(string Id)
     {
         if (string.IsNullOrEmpty(Id))
-            return new MetaDataResponse<ClientResponse, MetaResponse>(null, null);
+            return new MetaDataResponse<ClientResponse>(null, null);
 
         var cliente = await _repository.GetByIdAsync(Id);
 
         if (cliente == null)
-            return new MetaDataResponse<ClientResponse, MetaResponse>(null, null);
+            return new MetaDataResponse<ClientResponse>(null, null);
 
         var clienteResponse = new ClientResponse
         {
@@ -100,10 +100,10 @@ public class ClienteService : BaseService, IClienteService
             }
         };
 
-        return new MetaDataResponse<ClientResponse, MetaResponse>(clienteResponse, null);
+        return new MetaDataResponse<ClientResponse>(clienteResponse, null);
     }
 
-    public async Task<MetaDataResponse<bool, MetaResponse>> CreateOrUpdateClient(CreateClientRequest request)
+    public async Task<MetaDataResponse<bool>> CreateOrUpdateClient(CreateClientRequest request)
     {
         try
         {
@@ -132,7 +132,7 @@ public class ClienteService : BaseService, IClienteService
                 var existingClient = await _repository.GetByIdAsync(request.Id);
 
                 if (existingClient == null)
-                    return new MetaDataResponse<bool, MetaResponse>(false, null);
+                    return new MetaDataResponse<bool>(false, null);
 
                 existingClient.fullName = request.fullName;
                 existingClient.Email = request.Email;
@@ -146,11 +146,11 @@ public class ClienteService : BaseService, IClienteService
                 await _repository.UpdateAsync(existingClient);
             }
 
-            return new MetaDataResponse<bool, MetaResponse>(true, null);
+            return new MetaDataResponse<bool>(true, null);
         }
         catch (Exception ex)
         {
-            return new MetaDataResponse<bool, MetaResponse>(false, null);
+            return new MetaDataResponse<bool>(false, null);
         }
     }
     #endregion
