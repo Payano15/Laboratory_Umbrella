@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +19,6 @@ public static class Constants
             public static string NotFound = "NFD0001";
             public const string InvalidUserCredentials = "TKNF0002";
 
-            // Board Registration Errors
             public static string DuplicateRegistration = "BRREG0001";
             public static string BoardAlreadyExists = "BRREG0002";
             public static string InvalidScreenType = "BRREG0003";
@@ -27,6 +26,7 @@ public static class Constants
             public static string LotobetLinkFailed = "BRREG0005";
             public static string ActivationNotFound = "BRREG0006";
             public static string ConfigurationFailed = "BRREG0007";
+            public static string UserNoEncontrado = "USRNOT001";
         }
     }
 
@@ -40,7 +40,6 @@ public static class Constants
             public static string NotFound = "Resource not found";
             public const string InvalidUserCredentials = "Invalid user credentials.";
 
-            // Board Registration Error Messages
             public static string DuplicateRegistration = "Ya existe una solicitud de registro pendiente para este dispositivo";
             public static string BoardAlreadyExists = "Ya existe un board activo con este DeviceId";
             public static string InvalidScreenType = "Tipo de pantalla no válido";
@@ -48,6 +47,7 @@ public static class Constants
             public static string LotobetLinkFailed = "Error al vincular con la API de Lotobet";
             public static string ActivationNotFound = "No se encontró una activación pendiente para este board";
             public static string ConfigurationFailed = "Error al configurar el board";
+            public static string UserNoEncontrado = "El usuario no existe";
         }
     }
 

@@ -1,4 +1,4 @@
-﻿using Laboratory.Umbrella.Dominio.Entities;
+using Laboratory.Umbrella.Dominio.Entities;
 using Laboratory.Umbrella.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -85,7 +85,6 @@ public class SQLDBRepository<T> : IRepository<T> where T : class, IEntity
     {
         IQueryable<T> query = _dbSet;
 
-        // Aplicar includes para cargar entidades relacionadas
         foreach (var include in includes)
         {
             query = query.Include(include);
@@ -103,16 +102,13 @@ public class SQLDBRepository<T> : IRepository<T> where T : class, IEntity
     {
         IQueryable<T> query = _dbSet;
 
-        // Aplicar filtro si existe
         if (filter != null)
         {
             query = query.Where(filter);
         }
 
-        // Obtener total de registros
         var totalCount = await query.CountAsync();
 
-        // Aplicar ordenamiento
         if (orderBy != null)
         {
             query = ascending
@@ -120,7 +116,6 @@ public class SQLDBRepository<T> : IRepository<T> where T : class, IEntity
                 : query.OrderByDescending(orderBy);
         }
 
-        // Aplicar paginación
         var items = await query
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)

@@ -6,7 +6,7 @@ namespace Laboratory.Umbrella.Services.Interfaces;
 
 public interface IClienteService
 {
-    Task<MetaDataResponse<List<ClientResponse>, MetaResponse>> GetClient(ClientRequest request);
-    Task<MetaDataResponse<ClientResponse, MetaResponse>> GetClientById(string Id);
-    Task<MetaDataResponse<bool, MetaResponse>> CreateOrUpdateClient(CreateClientRequest request);
+    Task<MetaDataResponse<List<ClientResponse>>> GetClient(ClientRequest request);
+    Task<MetaDataResponse<ClientResponse>> GetClientById(string Id);
+    Task<MetaDataResponse<bool>> CreateOrUpdateClient(CreateClientRequest request);
 }

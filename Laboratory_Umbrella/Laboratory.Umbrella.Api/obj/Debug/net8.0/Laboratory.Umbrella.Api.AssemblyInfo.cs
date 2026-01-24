@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d273a57e-84db-405b-b604-447195a1bbe3")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Laboratory.Umbrella.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efbae64d21abb503ace1a2b864e9f2dd401f920c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74f930a7749eb44ce0f4f9e3a4a683f4f9e623b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Laboratory.Umbrella.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Laboratory.Umbrella.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

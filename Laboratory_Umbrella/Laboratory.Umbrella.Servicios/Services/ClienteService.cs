@@ -21,7 +21,7 @@ public class ClienteService : BaseService, IClienteService
     #endregion
 
     #region Methods
-    public async Task<MetaDataResponse<List<ClientResponse>, MetaResponse>> GetClient(ClientRequest request)
+    public async Task<MetaDataResponse<List<ClientResponse>>> GetClient(ClientRequest request)
     {
         Expression<Func<Cliente, bool>>? filter = null;
 
@@ -37,7 +37,6 @@ public class ClienteService : BaseService, IClienteService
             c => c.fullName,
             ascending: true);
 
-        // Mapear a response
         var clienteResponse = pagedResult.Items.Select(c => new ClientResponse
         {
             Id = c.Id,
@@ -59,7 +58,6 @@ public class ClienteService : BaseService, IClienteService
             }
         }).ToList();
 
-        // Construir metadata
         var meta = new MetaResponse
         {
             CurrentPage = request.PageNumber,
@@ -68,22 +66,19 @@ public class ClienteService : BaseService, IClienteService
             TotalPages = (int)Math.Ceiling((double)pagedResult.TotalCount / request.PageSize)
         };
 
-        return new MetaDataResponse<List<ClientResponse>, MetaResponse>(clienteResponse, meta);
+        return new(clienteResponse, meta);
     }
 
-    public async Task<MetaDataResponse<ClientResponse, MetaResponse>> GetClientById(string Id)
+    public async Task<MetaDataResponse<ClientResponse>> GetClientById(string Id)
     {
-        // Validación corregida
         if (string.IsNullOrEmpty(Id))
-            return new MetaDataResponse<ClientResponse, MetaResponse>(null, null);
+            return new MetaDataResponse<ClientResponse>(null, null);
 
-        // Buscar cliente usando el repositorio o DbContext
         var cliente = await _repository.GetByIdAsync(Id);
 
         if (cliente == null)
-            return new MetaDataResponse<ClientResponse, MetaResponse>(null, null);
+            return new MetaDataResponse<ClientResponse>(null, null);
 
-        // Mapear a response
         var clienteResponse = new ClientResponse
         {
             Id = cliente.Id,
@@ -105,10 +100,10 @@ public class ClienteService : BaseService, IClienteService
             }
         };
 
-        return new MetaDataResponse<ClientResponse, MetaResponse>(clienteResponse, null);
+        return new MetaDataResponse<ClientResponse>(clienteResponse, null);
     }
 
-    public async Task<MetaDataResponse<bool, MetaResponse>> CreateOrUpdateClient(CreateClientRequest request)
+    public async Task<MetaDataResponse<bool>> CreateOrUpdateClient(CreateClientRequest request)
     {
         try
         {
@@ -116,10 +111,9 @@ public class ClienteService : BaseService, IClienteService
 
             if (isCreating)
             {
-                // Crear nuevo cliente
                 var newClient = new Cliente
                 {
-                    Id = Guid.NewGuid().ToString(), // Generar nuevo ID
+                    Id = Guid.NewGuid().ToString(),
                     fullName = request.fullName,
                     Email = request.Email,
                     Phone = request.Phone,
@@ -128,20 +122,18 @@ public class ClienteService : BaseService, IClienteService
                     Status = (int)GeneralStatus.ClientStatus.StatusClient.ACTIVE,
                     bornDate = request.bornDate,
                     CreatedAt = DateTime.Now,
-                    UserCreated = "System" // O el usuario actual
+                    UserCreated = "System"
                 };
 
                 await _repository.AddAsync(newClient);
             }
             else
             {
-                // Actualizar cliente existente
                 var existingClient = await _repository.GetByIdAsync(request.Id);
 
                 if (existingClient == null)
-                    return new MetaDataResponse<bool, MetaResponse>(false, null);
+                    return new MetaDataResponse<bool>(false, null);
 
-                // Actualizar propiedades
                 existingClient.fullName = request.fullName;
                 existingClient.Email = request.Email;
                 existingClient.Phone = request.Phone;
@@ -149,18 +141,16 @@ public class ClienteService : BaseService, IClienteService
                 existingClient.Address = request.Address;
                 existingClient.bornDate = request.bornDate;
                 existingClient.UpdatedAt = DateTime.Now;
-                existingClient.UserUpdated = "System"; // O el usuario actual
+                existingClient.UserUpdated = "System";
 
                 await _repository.UpdateAsync(existingClient);
             }
 
-            return new MetaDataResponse<bool, MetaResponse>(true, null);
+            return new MetaDataResponse<bool>(true, null);
         }
         catch (Exception ex)
         {
-            // Loggear el error si tienes ILogger
-            // _logger.LogError(ex, "Error al crear/actualizar cliente");
-            return new MetaDataResponse<bool, MetaResponse>(false, null);
+            return new MetaDataResponse<bool>(false, null);
         }
     }
     #endregion
