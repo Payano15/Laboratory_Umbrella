@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -29,7 +29,7 @@ public class Opciones : IEntity
     [MaxLength(36)]
     public string SectionId { get; set; } = string.Empty;
 
-    public Section Section { get; set; }
+    public Secciones Section { get; set; } = null!;
 
     [Required]
     public int Order { get; set; }
