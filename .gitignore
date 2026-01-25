@@ -3,6 +3,6 @@
 *.db
 *.suo
 
-# Compilaci�n .NET
-bin/
-obj/
+# Compilacion .NET
+**/bin/
+**/obj/
