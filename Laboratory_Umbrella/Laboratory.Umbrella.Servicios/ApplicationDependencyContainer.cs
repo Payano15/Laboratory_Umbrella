@@ -16,6 +16,8 @@ public static class ApplicationDependencyContainer
         services.AddScoped<IOpcionesService, OpcionesService>();
         services.AddScoped<ISeccionesService, SeccionesService>();
         services.AddScoped<IProfileOptionPermissionService, ProfileOptionPermissionService>();
+        services.AddScoped<IAuthenticationService, AuthenticationService>();
+        services.AddScoped<ITokenService, TokenService>();
 
         return services;
     }

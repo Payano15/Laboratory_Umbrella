@@ -18,6 +18,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Opciones> Opciones { get; set; }
     public DbSet<Secciones> Secciones { get; set; }
     public DbSet<ProfileOptionPermission> ProfileOptionPermissions { get; set; }
+    public DbSet<UserAuthentication> UserAuthentications { get; set; }
     #endregion
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -31,6 +32,7 @@ public class ApplicationDbContext : DbContext
         ConfigureOpciones(modelBuilder);
         ConfigureSecciones(modelBuilder);
         ConfigureProfileOptionPermissions(modelBuilder);
+        ConfigureUserAuthentications(modelBuilder);
 
     }
 
@@ -162,6 +164,18 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.ProfileId).HasMaxLength(36).IsRequired();
             entity.Property(e => e.OptionId).HasMaxLength(36).IsRequired();
             entity.Ignore(e => e.Permission);
+        });
+    }
+
+    private void ConfigureUserAuthentications(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<UserAuthentication>(entity =>
+        {
+            entity.ToTable("UserAuthentications");
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Id).HasMaxLength(36).IsRequired();
+            entity.Property(e => e.UserName).HasMaxLength(100).IsRequired();
+            entity.Property(e => e.Token).HasMaxLength(200).IsRequired();
         });
     }
 

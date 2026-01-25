@@ -17,5 +17,8 @@ public record ClientResponse
     public string Address { get; set; } = string.Empty;
     public string Status { get; set; } = string.Empty;
     public string bornDate { get; set; } = string.Empty;
+    public string TypeClient { get; set; } = string.Empty;
+    public decimal CreditLimit { get; set; } = decimal.Zero;
+    public decimal discount { get; set; } = decimal.Zero;
     public AuditResponse Audit  { get; set; } = new();
 }

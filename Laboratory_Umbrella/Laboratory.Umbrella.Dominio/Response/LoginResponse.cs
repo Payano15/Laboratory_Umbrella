@@ -1,14 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Laboratory.Umbrella.Dominio.Response;
 
-namespace Laboratory.Umbrella.Dominio.Response;
-
-public record AuthTokenResponse
+public class LoginResponse
 {
-    public bool IsLoggedIn { get; set; }
+    public bool IsLoggedIn { get; set; } 
     public string DateExpired { get; set; } = string.Empty;
     public string Token { get; set; } = string.Empty;
     public string UserName { get; set; } = string.Empty;

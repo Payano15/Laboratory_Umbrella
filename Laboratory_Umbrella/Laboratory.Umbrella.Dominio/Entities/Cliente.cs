@@ -44,4 +44,11 @@ public class Cliente : IEntity
     public string? UserAnulled { get; set; }
 
     public DateTime? AnulledAt { get; set; }
+
+    [MaxLength(25)]
+    public int TypeClient { get; set; } 
+
+    public decimal CreditLimit { get; set; } = decimal.Zero;
+
+    public decimal discount { get; set; } = decimal.Zero;
 }

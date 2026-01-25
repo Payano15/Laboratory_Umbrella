@@ -13,4 +13,21 @@ public static class GeneralStatus
         }
     }
 
+    public static class TypeClient
+    {
+        public enum TypeClients
+        {
+            Client = 0,
+            Provider = 1,
+        }
+    }
+
+    public static class GlobalStatus
+    {
+        public enum Status
+        {
+            Activo = 1,
+            Inactivo = 2,
+        }
+    }
 }

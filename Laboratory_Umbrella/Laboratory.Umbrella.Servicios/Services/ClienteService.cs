@@ -46,27 +46,22 @@ public class ClienteService : BaseService, IClienteService
             gender = c.gender,
             Address = c.Address,
             Status = Enum.GetName(typeof(GeneralStatus.ClientStatus.StatusClient), c.Status) ?? string.Empty,
-            bornDate = c.bornDate.ToString("yyyy-MM-dd HH:mm:ss"),
+            bornDate = DateToString(c.bornDate),
+            TypeClient = Enum.GetName(typeof(GeneralStatus.TypeClient.TypeClients), c.TypeClient) ?? string.Empty,
+            CreditLimit = c.CreditLimit,
+            discount = c.discount,
             Audit = new AuditResponse
             {
                 UserCreated = c.UserCreated,
-                CreatedAt = c.CreatedAt.ToString("yyyy-MM-dd HH:mm:ss"),
+                CreatedAt = DateToString(c.CreatedAt),
                 UserUpdated = c.UserUpdated,
-                UpdatedAt = c.UpdatedAt?.ToString("yyyy-MM-dd HH:mm:ss") ?? "",
+                UpdatedAt = DateToString(c.UpdatedAt),
                 UserAnulled = c.UserAnulled,
-                AnulledAt = c.AnulledAt?.ToString("yyyy-MM-dd HH:mm:ss") ?? "",
+                AnulledAt = DateToString(c.AnulledAt),
             }
         }).ToList();
 
-        var meta = new MetaResponse
-        {
-            CurrentPage = request.PageNumber,
-            PageSize = request.PageSize,
-            TotalCount = pagedResult.TotalCount,
-            TotalPages = (int)Math.Ceiling((double)pagedResult.TotalCount / request.PageSize)
-        };
-
-        return new(clienteResponse, meta);
+        return new(clienteResponse, BuildMeta(request.PageNumber, request.PageSize, pagedResult.TotalCount));
     }
 
     public async Task<MetaDataResponse<ClientResponse>> GetClientById(string Id)
@@ -88,19 +83,22 @@ public class ClienteService : BaseService, IClienteService
             gender = cliente.gender,
             Address = cliente.Address,
             Status = Enum.GetName(typeof(GeneralStatus.ClientStatus.StatusClient), cliente.Status) ?? string.Empty,
-            bornDate = cliente.bornDate.ToString("yyyy-MM-dd HH:mm:ss"),
+            bornDate = DateToString(cliente.bornDate),
+            TypeClient = Enum.GetName(typeof(GeneralStatus.TypeClient.TypeClients), cliente.TypeClient) ?? string.Empty,
+            CreditLimit = cliente.CreditLimit,
+            discount = cliente.discount,
             Audit = new AuditResponse
             {
                 UserCreated = cliente.UserCreated,
-                CreatedAt = cliente.CreatedAt.ToString("yyyy-MM-dd HH:mm:ss"),
+                CreatedAt = DateToString(cliente.CreatedAt),
                 UserUpdated = cliente.UserUpdated,
-                UpdatedAt = cliente.UpdatedAt?.ToString("yyyy-MM-dd HH:mm:ss") ?? "",
+                UpdatedAt = DateToString(cliente.UpdatedAt),
                 UserAnulled = cliente.UserAnulled,
-                AnulledAt = cliente.AnulledAt?.ToString("yyyy-MM-dd HH:mm:ss") ?? "",
+                AnulledAt = DateToString(cliente.AnulledAt),
             }
         };
 
-        return new MetaDataResponse<ClientResponse>(clienteResponse, null);
+        return new(clienteResponse);
     }
 
     public async Task<MetaDataResponse<bool>> CreateOrUpdateClient(CreateClientRequest request)
@@ -121,6 +119,9 @@ public class ClienteService : BaseService, IClienteService
                     Address = request.Address,
                     Status = (int)GeneralStatus.ClientStatus.StatusClient.ACTIVE,
                     bornDate = request.bornDate,
+                    TypeClient = (int)GeneralStatus.TypeClient.TypeClients.Client,
+                    CreditLimit = request.CreditLimit,
+                    discount = request.discount,
                     CreatedAt = DateTime.Now,
                     UserCreated = "System"
                 };
@@ -139,6 +140,9 @@ public class ClienteService : BaseService, IClienteService
                 existingClient.Phone = request.Phone;
                 existingClient.gender = request.gender;
                 existingClient.Address = request.Address;
+                existingClient.Status = request.Status;
+                existingClient.CreditLimit = request.CreditLimit;
+                existingClient.discount = request.discount;
                 existingClient.bornDate = request.bornDate;
                 existingClient.UpdatedAt = DateTime.Now;
                 existingClient.UserUpdated = "System";
@@ -146,12 +150,27 @@ public class ClienteService : BaseService, IClienteService
                 await _repository.UpdateAsync(existingClient);
             }
 
-            return new MetaDataResponse<bool>(true, null);
+            return new(true);
         }
         catch (Exception ex)
         {
-            return new MetaDataResponse<bool>(false, null);
+            return new(false);
         }
+    }
+    #endregion
+
+    #region Auxiliary Methods
+    private MetaResponse BuildMeta(int page, int pageSize, long totalCount)
+    {
+        return new MetaResponse
+        {
+            TotalCount = (int)totalCount,
+            CurrentPage = page,
+            PageSize = pageSize,
+            TotalPages = (int)Math.Ceiling((double)totalCount / pageSize),
+            HasNextPage = HasNextPage(page, pageSize, totalCount),
+            HasPreviousPage = page > 1
+        };
     }
     #endregion
 }

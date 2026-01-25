@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Laboratory.Umbrella.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74f930a7749eb44ce0f4f9e3a4a683f4f9e623b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ac952ee6c68076103a3ca54a37cd737e445df06")]
 [assembly: System.Reflection.AssemblyProductAttribute("Laboratory.Umbrella.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Laboratory.Umbrella.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

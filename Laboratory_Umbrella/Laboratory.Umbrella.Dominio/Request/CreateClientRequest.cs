@@ -15,6 +15,8 @@ public record CreateClientRequest
     public string gender { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;
     public int Status { get; set; }
+    public decimal CreditLimit { get; set; } = decimal.Zero;
+    public decimal discount { get; set; } = decimal.Zero;
     public DateTime bornDate { get; set; }
     
 }

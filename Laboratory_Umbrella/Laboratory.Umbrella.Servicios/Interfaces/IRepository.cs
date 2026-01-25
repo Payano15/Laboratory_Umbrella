@@ -5,6 +5,7 @@ namespace Laboratory.Umbrella.Services.Interfaces;
 
 public interface IRepository<T> where T : class, IEntity
 {
+    IQueryable<T> Query();
     Task<T?> GetByIdAsync(string id);
     Task<List<T>> GetAllAsync();
     Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate);
