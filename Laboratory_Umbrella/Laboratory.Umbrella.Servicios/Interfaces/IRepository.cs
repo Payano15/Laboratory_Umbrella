@@ -18,16 +18,14 @@ public interface IRepository<T> where T : class, IEntity
     Task<int> CountAsync(Expression<Func<T, bool>> predicate);
 
     Task<List<T>> FindWithIncludesAsync(
-        Expression<Func<T, bool>> predicate,
-        params Expression<Func<T, object>>[] includes);
-
+    Expression<Func<T, bool>> predicate,
+    params Expression<Func<T, object>>[] includes);
     Task<(List<T> Items, int TotalCount)> GetPagedAsync(
-        int pageNumber,
-        int pageSize,
-        Expression<Func<T, bool>>? filter = null,
-        Expression<Func<T, object>>? orderBy = null,
-        bool ascending = true);
-
+    int pageNumber,
+    int pageSize,
+    Expression<Func<T, bool>>? filter = null,
+    Expression<Func<T, object>>? orderBy = null,
+    bool ascending = true);
     Task AddRangeAsync(IEnumerable<T> entities);
     Task UpdateRangeAsync(IEnumerable<T> entities);
     Task DeleteRangeAsync(IEnumerable<string> ids);

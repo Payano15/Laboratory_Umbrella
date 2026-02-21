@@ -1,5 +1,6 @@
 using Laboratory.Umbrella.Services.Interfaces;
 using Laboratory.Umbrella.Services.Services;
+using Laboratory.Umbrella.Services.Services.Autentications;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Laboratory.Umbrella.Servicios;

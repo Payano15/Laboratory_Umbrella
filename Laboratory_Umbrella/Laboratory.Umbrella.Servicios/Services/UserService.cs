@@ -107,7 +107,7 @@ public class UserService : BaseService, IUserService
             Permissions = BuildPermissions(user.Id, userProfiles, profiles, profilePermissions, options, sections)
         };
 
-        return new(userResponse, null);
+        return new(userResponse);
     }
 
     public async Task<MetaDataResponse<bool>> Save(SaveUserRequest request)
@@ -122,11 +122,11 @@ public class UserService : BaseService, IUserService
     public async Task<MetaDataResponse<bool>> ChangePassword(string id, ChangePasswordRequest request)
     {
         if (string.IsNullOrWhiteSpace(id))
-            return new(false, null);
+            return new(false);
 
         var user = await _dbUser.GetByIdAsync(id);
         if (user == null)
-            return new(false, null);
+            return new(false);
 
         var newSalt = Guid.NewGuid().ToString();
         var newHash = SecureChecksumHelper.ComputeHMACSHA256(request.NewPassword, newSalt);
@@ -134,25 +134,25 @@ public class UserService : BaseService, IUserService
         user.hashSalt = newSalt;
         user.PasswordHash = newHash;
         user.UpdatedAt = DateTime.Now;
-        user.UserUpdated = "System";
+        user.UserUpdated = UserLogged;
 
         await _dbUser.UpdateAsync(user);
 
-        return new(true, null);
+        return new(true);
     }
 
     public async Task<MetaDataResponse<bool>> ValidatePassword(ValidatePasswordRequest request)
     {
         if (string.IsNullOrWhiteSpace(request.UserId) || string.IsNullOrWhiteSpace(request.PasswordHash))
-            return new(false, null);
+            return new(false);
 
         var user = await _dbUser.GetByIdAsync(request.UserId);
         if (user == null)
-            return new(false, null);
+            return new(false);
 
         var isValid = SecureChecksumHelper.Validate(request.PasswordHash, user.PasswordHash);
 
-        return new(isValid, null);
+        return new(isValid);
     }
     #endregion
 
@@ -200,10 +200,7 @@ public class UserService : BaseService, IUserService
             hashSalt = salt,
             Status = request.Status,
             CreatedAt = DateTime.Now,
-            UserCreated = "System",
-            UpdatedAt = DateTime.Now,
-            UserUpdated = "System",
-            LastLogin = DateTime.Now
+            UserCreated = UserLogged
         };
 
         await _dbUser.AddAsync(newUser);
@@ -226,13 +223,13 @@ public class UserService : BaseService, IUserService
         user.UserName = request.UserName;
         user.Status = request.Status;
         user.UpdatedAt = DateTime.Now;
-        user.UserUpdated = "System";
+        user.UserUpdated = UserLogged;
 
         await _dbUser.UpdateAsync(user);
 
         await ReplaceUserProfiles(user.Id, request.UserProfileIds);
 
-        return new(true, null);
+        return new(true);
     }
 
     private async Task ReplaceUserProfiles(string userId, List<string> profileIds)

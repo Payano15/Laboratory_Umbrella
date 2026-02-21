@@ -79,7 +79,4 @@ public class ClientController : BaseController
             return Ok(new Response<object>("GCO001", ex.Message));
         }
     }
-
-
-
 }

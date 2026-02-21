@@ -123,7 +123,7 @@ public class ClienteService : BaseService, IClienteService
                     CreditLimit = request.CreditLimit,
                     discount = request.discount,
                     CreatedAt = DateTime.Now,
-                    UserCreated = "System"
+                    UserCreated = UserLogged
                 };
 
                 await _repository.AddAsync(newClient);
@@ -145,7 +145,7 @@ public class ClienteService : BaseService, IClienteService
                 existingClient.discount = request.discount;
                 existingClient.bornDate = request.bornDate;
                 existingClient.UpdatedAt = DateTime.Now;
-                existingClient.UserUpdated = "System";
+                existingClient.UserUpdated = UserLogged;
 
                 await _repository.UpdateAsync(existingClient);
             }

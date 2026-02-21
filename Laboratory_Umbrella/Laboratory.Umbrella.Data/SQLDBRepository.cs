@@ -25,6 +25,11 @@ public class SQLDBRepository<T> : IRepository<T> where T : class, IEntity
     #endregion
 
     #region CRUD Operations
+    public IQueryable<T> Query()
+    {
+        return _context.Set<T>();
+    }
+
     public async Task<T?> GetByIdAsync(string id)
     {
         return await _dbSet.FindAsync(id);
@@ -100,20 +105,40 @@ public class SQLDBRepository<T> : IRepository<T> where T : class, IEntity
         Expression<Func<T, object>>? orderBy = null,
         bool ascending = true)
     {
+        if (pageNumber < 1)
+            pageNumber = 1;
+
+        if (pageSize <= 0)
+            pageSize = 10;
+
         IQueryable<T> query = _dbSet;
 
         if (filter != null)
-        {
             query = query.Where(filter);
-        }
 
         var totalCount = await query.CountAsync();
 
         if (orderBy != null)
         {
-            query = ascending
-                ? query.OrderBy(orderBy)
-                : query.OrderByDescending(orderBy);
+            MemberExpression? memberExpression = orderBy.Body as MemberExpression;
+
+            if (memberExpression == null && orderBy.Body is UnaryExpression unary)
+                memberExpression = unary.Operand as MemberExpression;
+
+            if (memberExpression == null)
+            {
+                query = ascending
+                    ? query.OrderBy(orderBy)
+                    : query.OrderByDescending(orderBy);
+            }
+            else
+            {
+                string propertyName = memberExpression.Member.Name;
+
+                query = ascending
+                    ? query.OrderBy(e => EF.Property<object>(e, propertyName))
+                    : query.OrderByDescending(e => EF.Property<object>(e, propertyName));
+            }
         }
 
         var items = await query
@@ -123,6 +148,7 @@ public class SQLDBRepository<T> : IRepository<T> where T : class, IEntity
 
         return (items, totalCount);
     }
+
     #endregion
 
     #region Batch Operations

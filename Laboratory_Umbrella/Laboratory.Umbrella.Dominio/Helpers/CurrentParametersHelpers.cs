@@ -10,9 +10,11 @@ namespace Laboratory.Umbrella.Dominio.Helpers;
 public class CurrentParametersHelpers
 {
     public string Token { get; set; } = string.Empty;
+    public string UserLogged { get; set; } = string.Empty;
 
     public void SetAuthenticatedParameters(AuthTokenResponse TokenResponse)
     {
         Token = TokenResponse.Token;
+        UserLogged = TokenResponse.UserName;
     }
 }
