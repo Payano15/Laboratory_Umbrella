@@ -18,5 +18,4 @@ public record CreateClientRequest
     public decimal CreditLimit { get; set; } = decimal.Zero;
     public decimal discount { get; set; } = decimal.Zero;
     public DateTime bornDate { get; set; }
-    
 }
