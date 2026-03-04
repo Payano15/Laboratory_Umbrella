@@ -26,7 +26,7 @@ public class OpcionesController : BaseController
     {
         try
         {
-            await Init((BaseService)_service);
+            _service.InitService(await Init());
             var response = await _service.GetByParameters(request);
             return Ok(new Response<MetaDataResponse<List<OpcionesResponse>>>(response));
         }
@@ -45,7 +45,7 @@ public class OpcionesController : BaseController
     {
         try
         {
-            await Init((BaseService)_service);
+            _service.InitService(await Init());
             var response = await _service.GetById(id);
             return Ok(new Response<MetaDataResponse<OpcionesResponse>>(response));
         }
@@ -64,7 +64,7 @@ public class OpcionesController : BaseController
     {
         try
         {
-            await Init((BaseService)_service);
+            _service.InitService(await Init());
             var response = await _service.Save(request);
             return Ok(new Response<MetaDataResponse<bool>>(response));
         }
@@ -83,7 +83,7 @@ public class OpcionesController : BaseController
     {
         try
         {
-            await Init((BaseService)_service);
+            _service.InitService(await Init());
             var response = await _service.Delete(id);
             return Ok(new Response<MetaDataResponse<bool>>(response));
         }

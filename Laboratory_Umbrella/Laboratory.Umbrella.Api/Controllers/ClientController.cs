@@ -27,7 +27,7 @@ public class ClientController : BaseController
     {
         try
         {
-            await Init((BaseService)_clienteService);
+            _clienteService.InitService(await Init());
             var response = await _clienteService.GetClient(request);
             return Ok(new Response<MetaDataResponse<List<ClientResponse>>>(response));
         }
@@ -47,7 +47,7 @@ public class ClientController : BaseController
     {
         try
         {
-            await Init((BaseService)_clienteService);
+            _clienteService.InitService(await Init());
             var response = await _clienteService.GetClientById(Id);
             return Ok(new Response<MetaDataResponse<ClientResponse>>(response));
         }
@@ -66,7 +66,7 @@ public class ClientController : BaseController
     {
         try
         {
-            await Init((BaseService)_clienteService);
+            _clienteService.InitService(await Init());
             var response = await _clienteService.CreateOrUpdateClient(request);
             return Ok(new Response<MetaDataResponse<bool>>(response));
         }

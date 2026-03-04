@@ -8,12 +8,10 @@ public class SecureHeaderMiddleware
 {
     private static Config? _config;
     private readonly RequestDelegate _next;
-    private readonly IConfiguration _configuration;
 
-    public SecureHeaderMiddleware(RequestDelegate next, IConfiguration configuration)
+    public SecureHeaderMiddleware(RequestDelegate next)
     {
         _next = next;
-        _configuration = configuration;
     }
 
     public async Task InvokeAsync(HttpContext context)

@@ -25,7 +25,7 @@ public class BaseController : ControllerBase
     #endregion
 
     #region Methods
-    protected async Task Init(BaseService service)
+    protected async Task<CurrentParametersHelpers> Init()
     {
         var token = HttpContext.Request.Headers.Authorization.FirstOrDefault() ?? string.Empty;
         token = token.Replace("Bearer ", "");
@@ -39,7 +39,7 @@ public class BaseController : ControllerBase
 
         helper.SetAuthenticatedParameters(providerToken);
 
-        service.InitService(helper);
+        return helper;
     }
     protected Exception GetInnerException(Exception ex)
     {

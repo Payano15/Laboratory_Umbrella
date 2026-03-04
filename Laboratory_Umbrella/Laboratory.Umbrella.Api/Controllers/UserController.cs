@@ -26,7 +26,7 @@ public class UserController : BaseController
     {
         try
         {
-            await Init((BaseService)_userService);
+            _userService.InitService(await Init());
             var response = await _userService.GetByParameters(request);
             return Ok(new Response<MetaDataResponse<List<UsuariosResponse>>>(response));
         }
@@ -45,7 +45,7 @@ public class UserController : BaseController
     {
         try
         {
-            await Init((BaseService)_userService);
+            _userService.InitService(await Init());
             var response = await _userService.GetById(id);
             return Ok(new Response<MetaDataResponse<UsuariosResponse>>(response));
         }
@@ -64,7 +64,7 @@ public class UserController : BaseController
     {
         try
         {
-            await Init((BaseService)_userService);
+            _userService.InitService(await Init());
             var response = await _userService.Save(request);
             return Ok(new Response<MetaDataResponse<bool>>(response));
         }
@@ -83,7 +83,7 @@ public class UserController : BaseController
     {
         try
         {
-            await Init((BaseService)_userService);
+            _userService.InitService(await Init());
             var response = await _userService.ChangePassword(id, request);
             return Ok(new Response<MetaDataResponse<bool>>(response));
         }
@@ -102,7 +102,7 @@ public class UserController : BaseController
     {
         try
         {
-            await Init((BaseService)_userService);
+            _userService.InitService(await Init());
             var response = await _userService.ValidatePassword(request);
             return Ok(new Response<MetaDataResponse<bool>>(response));
         }
